@@ -1,25 +1,31 @@
-ask=input("What is the Answer to the Great Question of Life, the Universe, and Everything? ")
-match ask.lower().strip():
-	case "forty-two" | "forty two" |  "42":
-		print("Yes")
-	case _:
+def main():
+	#strip whitespaces and lowercase
+	usr = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ").strip().lower()
+
+	#remove all digits, signs and symbols
+	#remove excess spaces
+	usr = process_str(usr)
+	usr = " ".join(usr.split())
+
+	pos_ans = ["42","forty two", "fortytwo"]
+	if usr in pos_ans:
+		print ("Yes")
+	else:
 		print("No")
 
-#Alternate solution with loops (Just to clarify, I have some very basic knowledge in Python)
-'''
-truth='N'
-while truth=='N':
-	ask=input("What is the Answer to the Great Question of Life, the Universe, and Everything? ")
-	match ask.lower().strip():
-		case "fourty-two" | "fourty two" |  "42":
-			print("Yes")
-			truth='Y'
-		case _:
-			print("No")
-			quit=input("Do you wish to continue another time? [Y/N] ")
-			match quit:
-				case "Y" | "N":
-					truth=quit
-				case _:
-					quit=input("Do you wish to continue another time? [Y/N] ")
-'''
+def process_str(usr):
+	signs = []
+	spec_char = "0123456789!@#$%^&*()_+~`:;<>,.?/\\\"\'"
+
+	#for loop can be simplified in list comprehension
+	# signs = [char for char in usr if char in spec_char]
+	for char in usr:
+		if char in spec_char:
+			signs.append(char)
+
+	for rm in signs:
+		usr = usr.replace(rm, "")
+	return (usr)
+
+if __name__ == '__main__':
+	main()

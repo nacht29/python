@@ -1,9 +1,9 @@
-greeting = input('Greeting: ').strip().lower()
-if greeting[:5]=='hello':
-	print('$0')
-elif greeting[0]=='h' and greeting[:5]!='hello':
-	print('$20')
-elif len(greeting)<=1:
-	print('$100')
+greet = input("Greeting: ").lower().strip()
+if (greet == ""):
+	print("$100")
+elif (greet[0:5] == "hello"):
+	print("$0")
+elif (greet[0] == 'h' and greet[0:4] != "hello"):
+	print("$20")
 else:
-	print('$100')
+	print("$100")
