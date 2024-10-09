@@ -1,7 +1,9 @@
-ip=input("Input: ")
-output=""
-vowels=['a','e','i','o','u']
-for j in range(len(ip)):
-	if ip[j].lower() not in vowels:
-		output+=ip[j]
-print("Output:",output)
+usr = input("Input: ")
+out = ""
+vowels = ['a', 'e', 'i', 'o', 'u',
+		  'A', 'E', 'I', 'O', 'U']
+for c in usr:
+	if c not in vowels:
+		out += c
+		
+print("Output:", out)

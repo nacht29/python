@@ -1,4 +1,6 @@
-fruits={
+def check(query):
+	opt=query.lower().strip()
+	fruit={
 		'apple':130,
 		'avocado':50,
 		'banana':110,
@@ -19,9 +21,9 @@ fruits={
 		'sweet cherries':100,
 		'tangerine':50,
 		'watermelon':80
-}
+	}
+	return fruit.get(opt,"")
 
-item = input("Item: ")
-for fruit in fruits:
-	if fruit == item:
-		print("Calories:", fruits[item])
+ask=input("Item: ")
+if check(ask)!="":
+	print("Calories:",check(ask))

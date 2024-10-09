@@ -1,23 +1,31 @@
-def isnumber(val):
-	try:
-		int(val)
-		return True
-	except ValueError:
-		return False
+def get_int(prompt):
+	while True:
+		try:
+			num = int(input(prompt))
+		except ValueError:
+			continue
+		else:
+			return num
 
-due=50
-accepted=[5,10,25]
-while True :
-	if due>0:
-		print("Amount Due:",due)
-	elif due<=0:
-		if due==0:
-			print("Change Owed: 0")
-		elif due<0:
-			print("Change Owed:",due*-1)
+# only accepts 25, 10, and 5 cents
+# returns 0 if any other int is given
+# the coin will not be deducted from Amount Due, loop continues
+def insert_coin():
+	acceptable = [25, 10, 5]
+	coin = get_int("Insert Coin: ")
+	if coin in acceptable:
+		return coin
+	else:
+		return 0
+
+# always print Amount Due
+# loop breaks when Amount Due <= 0
+# prints Changed Owed, 0 is counted also
+due = 50
+while True:
+	print("Amount Due:", due)
+	coin = insert_coin()
+	due -= coin
+	if due <= 0:
+		print("Change Owed:", due * -1)
 		break
-	coin=input("Insert Coin: ")
-	while isnumber(coin)==False or int(coin) not in accepted:
-		print("Amount Due:",due)
-		coin=input("Insert Coin: ")
-	due-=int(coin)
