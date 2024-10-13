@@ -50,3 +50,8 @@ match search:
 # remove excess spaces
 expression = input("Expression: ").lower().split()
 expression = " ".join(expression.split())
+
+# isalnum check
+string = "12345 hello world"
+print(string.replace(' ', '').isalnum())
+print(string)

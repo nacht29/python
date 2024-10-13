@@ -1,2 +1,4 @@
-s = "12345abcd     "
-print(s.isalnum())
+import lib
+
+a = lib.get_int("hi ")
+print(a)
