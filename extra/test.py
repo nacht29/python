@@ -1,1 +1,2 @@
-print(int(2/3 * 100))
+a = "2 /// 3"
+print(a.split('/'))
