@@ -1,25 +1,39 @@
-months = [
-	"January", "February", "March", "April", "May", "June",
-	"July", "August", "September", "October", "November", "December"
-]
-
-while True:
-	date = input("Date: ").strip()  # Remove leading and trailing whitespace
-	if "/" not in date and "," not in date:
-		continue
-	elif "/" in date:
-		month, day, year = date.split("/")
-	elif "," in date:
-		date = date.replace(",", "")
-		month, day, year = date.split()
-		if month in months:
-			month = months.index(month) + 1
-	try:
-		if int(month) > 12 or int(day) > 31:
-			continue
-		else:
+def main():
+	payment=0
+	while True:
+		price=order()
+		if price==False:
 			break
-	except ValueError:
-		continue
+		elif price!=None:
+			payment+=total(price)
+			print("Total:",f"${payment:.2f}")
 
-print(f"{year}-{int(month):02}-{int(day):02}")
+def order():
+	food={
+	"Baja Taco": 4.25,
+	"Burrito": 7.50,
+	"Bowl": 8.50,
+	"Nachos": 11.00,
+	"Quesadilla": 8.50,
+	"Super Burrito": 8.50,
+	"Super Quesadilla": 9.50,
+	"Taco": 3.00,
+	"Tortilla Salad": 8.00
+	}
+
+	while True:
+		try:
+			user=input("Item: ").strip().title()
+		except EOFError:
+			print()
+			return False
+		else:
+			return food.get(user)
+
+def total(price):
+	bill=0
+	if price!= None:
+		bill+=price
+	return bill
+
+main()

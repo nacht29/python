@@ -33,3 +33,23 @@ find = "He"
 for search in ppl:
 	if find in search:
 		print(search, ppl[search])
+
+# VEERY IMPORTANT
+# DICTS ARE MODIFIED IN PLACE
+# notice how grocery = update_list(grocery, item) is not needed
+def update_list(grocery, item):
+	if item in grocery:
+		grocery[item] += 1
+	else:
+		grocery[item] = 1
+
+grocery = {}
+while True:
+	try:
+		item = input().strip().upper()
+		update_list(grocery, item) 
+	except EOFError:
+		print()
+		for i in grocery:
+			print(grocery[i], i)
+		break

@@ -1,4 +1,1 @@
-import lib
-
-a = lib.get_int("hi ")
-print(a)
+print(int(2/3 * 100))
