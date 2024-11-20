@@ -9,7 +9,7 @@ def isfloat(val):
         return False
 
 url = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json?amount=1")
-feedback=url.json()
+feedback = url.json()
 
 try:
     price=feedback["bpi"]["USD"]["rate_float"] * float(sys.argv[1])
