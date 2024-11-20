@@ -20,3 +20,6 @@ def process_str(usr):
 	for char in usr:
 		if char in spec_char:
 			signs.append(char)
+
+lst = [i for i in range (1, 11) if i <= 5]
+print(lst)
