@@ -1,5 +1,5 @@
 from random import randint
-from lib import get_int
+from cs50p.lib import get_int
 from sys import exit
 
 while True:

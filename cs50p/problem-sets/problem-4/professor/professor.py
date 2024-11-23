@@ -1,5 +1,5 @@
 from random import randint
-from lib import get_int
+from cs50p.lib import get_int
 
 def main():
 	upper_lim = get_upper_limit()
