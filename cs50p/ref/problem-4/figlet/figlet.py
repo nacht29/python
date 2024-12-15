@@ -3,11 +3,14 @@ from pyfiglet import Figlet
 
 figlet = Figlet()
 
+
 def main(argv):
 	if set_figlet_font(argv):
 		render_message()
 	else:
 		sys.exit("Invalid usage")
+
+
 
 def set_figlet_font(argv):
 	font_list = figlet.getFonts()
@@ -23,9 +26,11 @@ def set_figlet_font(argv):
 
 	return is_font_set
 
+
 def render_message():
 	message = input("Input: ")
 	print("Output:", figlet.renderText(message), sep="\n")
+
 
 if __name__ == "__main__":
 	main(sys.argv)
