@@ -1,4 +1,4 @@
-with open("input.txt", "r") as file:
+with open("part-1_input.txt", "r") as file:
 	big_line = ""
 	for line in file:
 		big_line += line
