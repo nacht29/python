@@ -1,12 +1,5 @@
-def prt(msg : str):
-	print(msg)
+a = "mul(23,23)"
 
-prt("hi")
+a = a.strip("mul()")
 
-def rt():
-	return 1, "hello"
-
-def ab():
-	a = 1
-	b = "hello"
-	return a, b
+print(a)
