@@ -1,5 +1,3 @@
-a = "mul(23,23)"
-
-a = a.strip("mul()")
+a = 'a'  + 'b' + 'c'
 
 print(a)
