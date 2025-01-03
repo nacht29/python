@@ -47,4 +47,3 @@ with open(sys.argv[1], "r") as input_file:
 			count = False
 	
 	print(corrected_median)
-			
